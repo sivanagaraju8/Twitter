@@ -30,4 +30,9 @@ public class TweetService{
 		 tweetRepository.deleteById(id);
 		
 	}
+
+	public Tweet findById(Long id) {
+		// TODO Auto-generated method stub
+		return  tweetRepository.findById(id).get();
+	}
 }

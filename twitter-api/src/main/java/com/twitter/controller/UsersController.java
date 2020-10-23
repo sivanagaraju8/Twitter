@@ -1,6 +1,7 @@
 package com.twitter.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -31,10 +32,10 @@ public class UsersController {
 	
    @GetMapping("/{id}")
    public ResponseEntity<User> findById(@PathVariable Long id) {
-       @SuppressWarnings("unused")
+       //@SuppressWarnings("unused")
 	User user = userService.findById(id);
 
-       return ResponseEntity.ok().body(user);
+       return ResponseEntity.ok(user);
    }
 
    @PostMapping

@@ -14,7 +14,7 @@ import com.twitter.model.User;
 import com.twitter.service.TweetService;
 import com.twitter.service.UserService;
 
-	
+@CrossOrigin(origins = "http://localhost:4200")	
 @RestController
 @RequestMapping("/api/tweets")
 public class TweetsController {
@@ -25,18 +25,25 @@ public class TweetsController {
        return ResponseEntity.ok(tweetService.findAll());
    }
 	
-   @GetMapping("/{userId}")
-   public ResponseEntity<ListIterator<Tweet>> findById(@PathVariable String userId) {
-       @SuppressWarnings("unused")
-	List<Tweet> user = tweetService.findByUserId(userId);
-       
-      
-       return ResponseEntity.ok(tweetService.findByUserId(userId).listIterator());
+	/*
+	 * @GetMapping("/{userId}") public ResponseEntity<List<Tweet>>
+	 * findByUserId(@PathVariable String userId) {
+	 * 
+	 * @SuppressWarnings("unused") List<Tweet> tweet =
+	 * tweetService.findByUserId(userId); return
+	 * ResponseEntity.ok(tweetService.findByUserId(userId)); }
+	 */
+   @GetMapping("/{id}")
+   public ResponseEntity<Tweet> findById(@PathVariable Long id) {
+	   
+     //  @SuppressWarnings({ "unused", "unchecked" })
+	/*List<Tweet> tweet = (List<Tweet>) tweetService.findById(id);*/
+       return ResponseEntity.ok(tweetService.findById(id));
    }
 
    @PostMapping
-	
-	  public ResponseEntity<Tweet> create( Tweet tweet) { return
+   @ResponseBody
+	  public ResponseEntity<Tweet> create( @RequestBody Tweet tweet) { return
 	  ResponseEntity.status(HttpStatus.CREATED).body(tweetService.save(tweet)); }
 	 
    
