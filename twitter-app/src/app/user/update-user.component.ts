@@ -11,21 +11,23 @@ import { UserService } from './user.service';
 
 export class UpdateUserComponent  implements OnInit {
   id:number;
-   users: User[]
-   user:User;
+   users=new User();
+   user : User;
 
    constructor(private route: ActivatedRoute,private router: Router, private userService: UserService) {
 
   }
    ngOnInit() {
-    this.user = new User();
+    
   
     this.id = this.route.snapshot.params['id'];
-    
+    console.log(this.id);
     this.userService.getUser(this.id)
       .subscribe(data => {
-        console.log(`data${data}`)
-        this.users = data;
+        console.log( data)
+        this.user = data;
+        console.log(`users ${this.user.username}`)
+        console.log(`users ${this.user.firstName}`)
       }, error => console.log(error));
   }
 
@@ -35,9 +37,10 @@ export class UpdateUserComponent  implements OnInit {
     this.userService.updateUser(this.user)
         .subscribe( data => {
           alert("User Updated successfully.");
+          this.router.navigate(['/users']);
         });
-        console.log(this.user);
-        console.log(this.user.username);
+        //console.log(this.user);
+        //console.log(this.users.username);
   };
 
 }

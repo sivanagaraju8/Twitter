@@ -1,0 +1,19 @@
+
+<div class="col-md-4">
+  
+    <h2 class="text-center">Update your edit</h2>
+
+  <form style="margin-left: 40%;">
+    <div class="form-group">
+      <label for="text">UserId:</label>
+      <input type="text" [(ngModel)]="tweet.userId" placeholder="UserId" name="userId" class="form-control" id="userId"  value="{{tweet.userId}}">
+    </div>
+    <div class="form-group">
+        <label for="text">Tweet</label>
+        <textarea  [(ngModel)]="tweet.tweet" placeholder="Send Something!" name="tweet" class="form-control" id="tweet" value="{{tweet.tweet}}" >
+            </textarea>
+        </div>
+    
+    <button type="submit" class="btn btn-success" (click)="updateTweet()">Send</button>
+  </form>
+  </div>

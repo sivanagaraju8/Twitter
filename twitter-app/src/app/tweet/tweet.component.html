@@ -1,0 +1,19 @@
+<br>
+<div class="col-md-6" style="margin-left: 20%;">
+<div *ngFor="let tweet of tweets">
+<div class="card" style="width: 25rem;font-weight:bolder;">
+  <div class="card-body">
+      <p class="text-dark">Hey! This is  {{tweet.userId}}</p>
+    <h6 class="card-title">Tweet Count No: {{tweet.id}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">Sent Time: {{tweet.createdTime}}</h6>
+    <hr style="color: blueviolet;">
+    <p class="card-text text-dark" style="font-family:Verdana, Geneva, Tahoma, sans-serif;font-size: 14px;">{{tweet.tweet}}</p>
+    <a class="btn btn-danger pull-left" (click)="deleteTweet(tweet)"> Delete Tweet</a> 
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <a class="btn btn-info pull-right" routerLink="/updateTweet/{{tweet.id}}" (click)="updateTweet(tweet.id)"> Update Tweet</a>
+  </div>
+  </div>
+  <br>
+</div>
+</div>
+  <!-- <p>;border:2px 2px 2px solid #fff !important;backgroundColor:white;"</p> -->

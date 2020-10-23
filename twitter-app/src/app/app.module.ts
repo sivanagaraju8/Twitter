@@ -10,12 +10,20 @@ import {HttpClientModule} from "@angular/common/http";
 import {AddUserComponent} from './user/add-user.component';
 import { UpdateUserComponent } from './user/update-user.component';
 
+import {TweetService} from './tweet/tweet.service';
+import { TweetComponent } from './tweet/tweet.component';
+import { UpdateTweetComponent } from './tweet/update-tweet.component';
+import { AddTweetComponent } from './tweet/add-tweet.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     AddUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    TweetComponent,
+    AddTweetComponent,
+    UpdateTweetComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +31,7 @@ import { UpdateUserComponent } from './user/update-user.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService, TweetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

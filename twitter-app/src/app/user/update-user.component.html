@@ -1,34 +1,39 @@
 <div class="col-md-4">
     <h2 class="text-center">Update User</h2>
-
-
+<div>
+User Details: {{user.username}}
+{{user.firstName}}
+{{user.password}}
+{{user.passwordConfirm}}
+</div>
   <form style="margin-left: 40%;">
     <div class="form-group">
       <label for="text">Username:</label>
-      <input type="text" [(ngModel)]="users.username" placeholder="Username" name="username" class="form-control" id="username" value="users.username" required >
+      <input type="text" [(ngModel)]="user.username" placeholder="Username" name="username" class="form-control" id="username" value="{{user.username}}" required >
     </div>
   
     <div class="form-group">
       <label for="firstName">First Name:</label>
-      <input [(ngModel)]="users.firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName" value="users.firstName" required>
+      <input [(ngModel)]="user.firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName" value="{{user.firstName}}" required>
     </div>
   
     <div class="form-group">
       <label for="lastName">Last Name:</label>
-      <input [(ngModel)]="users.lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName" value="users.lastName" required>
+      <input [(ngModel)]="user.lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName" value="{{user.lastName}}" required>
     </div>
     <div class="form-group">
         <label for="country">Country</label>
-        <input [(ngModel)]="users.country" placeholder="Country" name="country" class="form-control" id="country" value="users.country" required>
+        <input [(ngModel)]="user.country" placeholder="Country" name="country" class="form-control" id="country" value="{{user.country}}" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="text" [(ngModel)]="users.password" placeholder="Password" name="password" class="form-control" id="password" value="users.password" required>
+        <input type="text" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control" id="password" value="{{user.password}}" required>
       </div>
       <div class="form-group">
         <label for="passwordConfirm">Confirm Password</label>
-        <input type="text" [(ngModel)]="users.passwordConfirm" placeholder="passwordConfirm" name="passwordConfirm" class="form-control" id="passwordConfirm" >
+        <input type="text" [(ngModel)]="user.passwordConfirm" placeholder="passwordConfirm" name="passwordConfirm" class="form-control" id="passwordConfirm" value="{{user.password}}" required>
       </div>
     <button type="submit" class="btn btn-success" (click)="updateUser()">Create</button>
   </form>
-  </div>
+</div>
+  

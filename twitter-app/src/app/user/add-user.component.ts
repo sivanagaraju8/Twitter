@@ -20,6 +20,7 @@ export class AddUserComponent {
     this.userService.createUser(this.user)
         .subscribe( data => {
           alert("User created successfully.");
+          this.router.navigate(['/users']);
         });
         console.log(this.user);
         console.log(this.user.username);

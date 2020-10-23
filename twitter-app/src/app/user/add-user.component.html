@@ -21,11 +21,11 @@
         <input [(ngModel)]="user.country" placeholder="Country" name="country" class="form-control" id="country" required>
       </div>
       <div class="form-group">
-        <label for="password">Country</label>
+        <label for="password">Password</label>
         <input type="password" [(ngModel)]="user.password" placeholder="Password" name="password" class="form-control" id="password" required>
       </div>
       <div class="form-group">
-        <label for="passwordConfirm">Country</label>
+        <label for="passwordConfirm">Confirm Password</label>
         <input type="password" [(ngModel)]="user.passwordConfirm" placeholder="passwordConfirm" name="passwordConfirm" class="form-control" id="passwordConfirm">
       </div>
     <button type="submit" class="btn btn-success" (click)="createUser()">Create</button>

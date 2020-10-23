@@ -21,7 +21,7 @@ export class UserService {
     return this.http.get<User[]>(this.userUrl);
   }
   public getUser(userId) {
-    return this.http.get<User[]>(this.userUrl+"/"+userId);
+    return this.http.get<User>(this.userUrl+"/"+userId);
   }
   public deleteUser(user) {
     return this.http.delete(this.userUrl + "/"+ user.id);
